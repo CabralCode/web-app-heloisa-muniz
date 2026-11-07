@@ -1,0 +1,157 @@
+{
+  "hero": {
+    "subtitulo": "Atleta de Jiu-Jitsu"
+  },
+  "stats": [
+    {
+      "v": "11",
+      "s": "anos",
+      "d": "idade"
+    },
+    {
+      "v": "Faixa",
+      "s": "branca",
+      "d": "2 graus"
+    },
+    {
+      "v": "2",
+      "s": "pódios",
+      "d": "em 2026"
+    },
+    {
+      "v": "Equipe",
+      "s": "Saikoo",
+      "d": "José Bonifácio-SP"
+    }
+  ],
+  "quem": {
+    "texto": "Com 11 anos, a Heloisa é apaixonada pelo jiu-jitsu. Integrante da equipe Saikoo José Bonifácio, vem construindo sua trajetória com treino, disciplina e muita vontade de competir e em 2026 já subiu ao pódio **duas vezes**.",
+    "chips": [
+      "11 anos",
+      "Faixa branca · 2 graus",
+      "Equipe Saikoo",
+      "José Bonifácio-SP"
+    ]
+  },
+  "tatame": {
+    "texto": "Cada campeonato é um degrau. Em 2026, a Heloisa competiu em Rio Preto e voltou para casa com duas medalhas.",
+    "legenda": "Circuito Interior 2026",
+    "conquistas": [
+      {
+        "lugar": "Primeiro Lugar",
+        "evento": "Copa Star Rio Preto"
+      },
+      {
+        "lugar": "Segundo Lugar",
+        "evento": "Circuito Interior de Jiu-Jitsu Rio Preto"
+      }
+    ]
+  },
+  "desafios": {
+    "ano": "2027",
+    "eventos": [
+      {
+        "data": "[dd/mm]",
+        "nome": "Campeonato X",
+        "local": "Cidade-UF"
+      },
+      {
+        "data": "[dd/mm]",
+        "nome": "[Campeonato 2]",
+        "local": "[Cidade-UF]"
+      },
+      {
+        "data": "[dd/mm]",
+        "nome": "Campeonato Y",
+        "local": "Cidade-UF"
+      },
+      {
+        "data": "[dd/mm]",
+        "nome": "[Campeonato 4]",
+        "local": "[Cidade-UF]"
+      },
+      {
+        "data": "[dd/mm]",
+        "nome": "Campeonato Z",
+        "local": "Cidade-UF"
+      }
+    ]
+  },
+  "porque": {
+    "lead": "**Apoiar uma jovem atleta é investir em disciplina, dedicação, esporte e formação.** A Heloisa está no início da trajetória e busca parceiros que caminhem com ela nos próximos campeonatos e nas próximas conquistas.",
+    "cards": [
+      {
+        "titulo": "Visibilidade",
+        "texto": "Sua marca no kimono, nos pódios e nas redes, em todos os campeonatos da temporada."
+      },
+      {
+        "titulo": "Propósito",
+        "texto": "Apoiar no esporte é investir em disciplina, dedicação e formação."
+      },
+      {
+        "titulo": "Proximidade",
+        "texto": "Conteúdo real da rotina: treinos, viagens e lutas, desde o começo."
+      }
+    ]
+  },
+  "cotas": {
+    "custoMedio": "xxxx",
+    "areas": [
+      "Inscrições e viagens",
+      "Kimono e materiais",
+      "Transporte e hospedagem",
+      "Parceria na temporada"
+    ],
+    "lista": [
+      {
+        "selo": "master",
+        "nome": "Ouro",
+        "valor": "",
+        "areas": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "itens": [
+          "Logo em destaque nas costas do kimono",
+          "Marca em todos os posts da temporada",
+          "Agradecimento em cada pódio"
+        ]
+      },
+      {
+        "selo": "cota",
+        "nome": "Prata",
+        "valor": "",
+        "areas": [
+          0,
+          2
+        ],
+        "itens": [
+          "Logo na manga do kimono",
+          "Marca nos posts dos campeonatos"
+        ]
+      },
+      {
+        "selo": "cota",
+        "nome": "Apoio",
+        "valor": "",
+        "areas": [
+          1
+        ],
+        "itens": [
+          "Marca nos stories de agradecimento"
+        ]
+      }
+    ]
+  },
+  "kimono": {
+    "nota": "Respeitando as regras dos campeonatos e a condição de atleta menor de idade."
+  },
+  "contato": {
+    "nome": "Nome Responsável",
+    "telefone": "(11) 9 1111 - 1111",
+    "instagram": "@instagram.thamis",
+    "email": "thamis@thamis.com.br"
+  }
+}
