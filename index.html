@@ -16,7 +16,7 @@
   --paper:#F4EEE9; --paper-2:#EBE3DC; --white:#FFFDFA;
   --ink:#130F15; --ink-2:#2A2429; --muted:#5F5559;
   --red:#AA2B2B; --red-deep:#8A1F22; --red-hot:#C8363B;
-  --gold:#E4B84E; --silver:#B8B8C2; --sky:#5B8FC9; --pink:#F06CA0; --green:#7CCB72;
+  --gold:#E4B84E; --bronze:#8B5A3A; --silver:#B8B8C2; --sky:#5B8FC9; --pink:#F06CA0; --green:#7CCB72;
   --line: rgba(170,43,43,.10);
   --f-display:"Anton","Bebas Neue","Impact","Arial Narrow Bold",sans-serif;
   --f-script:"Mr Dafoe","Brush Script MT","Segoe Script",cursive;
@@ -95,7 +95,7 @@ section{position:relative}
 
 /* ---------- HERO ---------- */
 .hero{overflow:hidden;border-bottom:1px solid rgba(19,15,21,.06)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;justify-items:center;min-height:clamp(480px,48vw,680px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:stretch;min-height:clamp(500px,48vw,700px)}
 .hero-copy{align-self:center;padding-block:clamp(48px,7vw,80px);display:grid;justify-items:center;gap:26px;padding-left:clamp(36px,7vw,110px);width:100%}
 .logo{position:relative;width:min(100%,760px);margin:0}
 .logo::before{content:"";display:block;padding-top:62.62%}
@@ -106,8 +106,8 @@ section{position:relative}
 @keyframes drop{from{opacity:0;transform:translateY(-24px) scale(.96)}to{opacity:1;transform:none}}
 .hero .tag{font-weight:700;letter-spacing:.34em;font-size:clamp(13px,1.3vw,17px);color:var(--red);text-transform:uppercase;margin:-6px 0 0}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.hero-photo{position:relative;align-self:stretch;min-height:520px}
-.hero-photo img{position:absolute;top:0;right:-22%;height:122%;width:auto;max-width:none;filter:drop-shadow(-18px 18px 28px rgba(19,15,21,.25))}
+.hero-photo{position:relative;min-height:420px;margin-right:calc(-1 * max(var(--gut),env(safe-area-inset-right,0px)))}
+.hero-photo img{position:absolute;right:0;bottom:0;height:100%;width:auto;max-width:none;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%);mask-image:linear-gradient(90deg,transparent 0,#000 7%)}
 .hero-photo .word{position:absolute;right:-4%;top:6%;font-family:var(--f-display);font-size:clamp(70px,9vw,140px);line-height:.8;color:var(--red);text-transform:uppercase;opacity:.95;z-index:-1;writing-mode:vertical-rl;transform:rotate(180deg)}
 .rail{position:absolute;left:max(6px,env(safe-area-inset-left,0px));top:0;bottom:0;overflow:hidden;pointer-events:none;transform:rotate(180deg)}
 .rail-track{display:flex;flex-direction:column;align-items:center;animation:railup 24s linear infinite;will-change:transform}
@@ -122,7 +122,8 @@ section{position:relative}
 .stat b em{font-style:normal;color:var(--red-hot)}
 .stat span{font-size:14px;color:rgba(244,238,233,.7)}
 @media (max-width:860px){
-  .hero .wrap{min-height:0}
+  .hero .wrap{min-height:0;grid-template-columns:minmax(0,1fr)}
+  .hero-photo{min-height:0;height:clamp(340px,92vw,520px)}
   .hero-copy{padding-block:56px;padding-left:clamp(36px,9vw,60px)}
 }
 @media (max-width:600px){
@@ -268,20 +269,19 @@ section{position:relative}
 .cotas .h2 .script{font-size:1.05em;margin-left:.6em}
 .cotas .big{font-family:var(--f-display);font-size:clamp(96px,15vw,240px);line-height:1;padding-top:.04em;color:transparent;-webkit-text-stroke:1.5px var(--ink);max-width:100%;pointer-events:none;user-select:none}
 .areas{margin-top:clamp(28px,4vw,46px)}
-.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px);margin-top:clamp(30px,4vw,50px);align-items:start}
-.tier{position:relative;border-radius:18px;padding:30px 28px 26px;display:grid;gap:14px;min-height:360px;align-content:start;transform:rotate(var(--rot));transition:transform .45s cubic-bezier(.2,1.3,.3,1),box-shadow .3s;cursor:pointer;outline-offset:6px}
+.tiers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:clamp(30px,4vw,50px);align-items:stretch}
+.tier{position:relative;border-radius:18px;padding:26px 24px 24px;display:grid;gap:12px;min-height:300px;grid-template-rows:auto auto auto 1fr auto;align-content:start;transform:rotate(var(--rot));transition:transform .45s cubic-bezier(.2,1.3,.3,1),box-shadow .3s;cursor:pointer;outline-offset:6px}
 .tier:hover,.tier.sel{transform:rotate(0) translateY(-8px)}
 .tier.sel{box-shadow:0 0 0 4px var(--paper),0 0 0 7px var(--red-hot),var(--shadow)}
 .tier-ouro{background:var(--ink);color:var(--white);--rot:-2deg;box-shadow:10px 12px 0 var(--red-hot)}
 .tier-ouro.sel{box-shadow:10px 12px 0 var(--red-hot),0 0 0 4px var(--paper),0 0 0 7px var(--red-hot)}
-.tier-prata{background:var(--red);color:var(--white);--rot:.6deg;box-shadow:0 30px 40px -24px rgba(170,43,43,.7)}
-.tier-apoio{background:var(--white);color:var(--ink);border:2.5px solid var(--ink);--rot:2deg}
+.tier-prata{background:var(--red);color:var(--white);--rot:0deg;box-shadow:0 30px 40px -24px rgba(170,43,43,.7)}
+.tier-bronze{background:var(--bronze);color:var(--white);--rot:0deg;box-shadow:0 30px 40px -24px rgba(139,90,58,.7)}
+.tier-apoiador{background:var(--white);color:var(--ink);border:2.5px solid var(--ink);--rot:2deg}
 .tier .selo{font-family:var(--f-script);color:var(--red-hot);font-size:42px;line-height:.6;margin-bottom:-6px;display:block}
-.tier-prata .selo,.tier-apoio .selo{color:var(--white)}
-.tier-apoio .selo{color:var(--red)}
-.tier-prata .selo{color:var(--white)}
-.tier h3{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(52px,5.4vw,76px);line-height:.9;text-transform:uppercase}
-.tier-prata h3{color:var(--ink)}
+.tier-prata .selo,.tier-bronze .selo{color:var(--white)}
+.tier-apoiador .selo{color:var(--red)}
+.tier h3{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(34px,3vw,52px);line-height:.95;text-transform:uppercase;word-break:keep-all}
 .tier .valor{font-family:var(--f-serif);font-size:30px;line-height:1}
 .tier .valor .ph{font-family:var(--f-body);font-size:15px;opacity:.75;margin-left:6px;font-style:italic}
 .tier ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px;font-size:16px;line-height:1.35}
@@ -290,19 +290,22 @@ section{position:relative}
 .tier-ouro li::before{background:var(--red-hot)}
 .tier .pick{margin-top:10px;justify-self:start}
 .tier-ouro .pick{background:var(--red-hot)}
-.tier-prata .pick{background:var(--ink)}
-.sim{margin-top:clamp(36px,6vw,72px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:center;border-top:2px dashed rgba(19,15,21,.25);padding-top:32px}
-.sim label{font-weight:700;font-size:18px;display:block;margin-bottom:12px}
-.sim-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.sim input[type=range]{flex:1;min-width:180px;accent-color:var(--red);height:28px}
-.sim .n{font-family:var(--f-display);font-size:44px;line-height:1;min-width:2ch;text-align:center;color:var(--red)}
-.sim-out{text-align:right}
-.sim-out .tot{font-family:var(--f-serif);font-size:clamp(36px,4.6vw,56px);line-height:1;font-variant-numeric:tabular-nums}
-.sim-out .note{font-family:var(--f-serif);font-style:italic;font-size:19px;margin:8px 0 0;color:var(--ink-2)}
-@media (max-width:900px){
+.tier-prata .pick,.tier-bronze .pick{background:var(--ink)}
+.extra{margin-top:clamp(36px,6vw,64px);border-top:2px dashed rgba(19,15,21,.25);padding-top:28px;display:grid;gap:14px}
+.extra h3{margin:0;font-weight:700;font-size:16px;letter-spacing:.12em;text-transform:uppercase}
+.extra ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 40px;font-size:17px}
+.extra li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:8px}
+.extra li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);margin-top:9px}
+.extra-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-top:4px}
+.extra-foot small{font-size:13px;color:var(--muted);max-width:60ch}
+.extra-foot strong{font-family:var(--f-display);font-weight:400;font-size:clamp(22px,2.4vw,30px);color:var(--red);text-transform:uppercase;letter-spacing:.01em}
+@media (max-width:1100px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){
   .tiers{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+  .extra ul{grid-template-columns:1fr}
+}
+@media (max-width:900px){
   .tier{min-height:0}
-  .sim{grid-template-columns:1fr}.sim-out{text-align:left}
   .cotas.sec{padding-top:4px}
   .cotas .big{order:-1;font-size:clamp(72px,26vw,150px);margin:-.1em 0 -14px}
   .cotas-head{gap:0}
@@ -425,6 +428,9 @@ body.editing .edit-hint{display:block;font-size:13px;color:var(--muted);margin:0
         <a class="btn ghost" href="#cotas">Ver cotas de patrocínio</a>
       </div>
     </div>
+    <div class="hero-photo">
+      <img src="img/capa.webp" alt="Heloisa de kimono preto e faixa branca, de braços cruzados" width="690" height="1080">
+    </div>
   </div>
 </section>
 <div class="stats">
@@ -479,9 +485,8 @@ body.editing .edit-hint{display:block;font-size:13px;color:var(--muted);margin:0
   <div class="wrap">
     <div class="desafios-head rv">
       <h2 class="display h2">Próximos<span class="script">desafios</span></h2>
-      <div class="badge" aria-label="Temporada">
+      <div class="badge" aria-hidden="true">
         <svg viewBox="-4 -4 108 108" aria-hidden="true"><polygon fill="#AA2B2B" stroke="#AA2B2B" stroke-width="8" stroke-linejoin="round" points="100,50 86.7,59.8 93.3,75 76.9,76.9 75,93.3 59.8,86.7 50,100 40.2,86.7 25,93.3 23.1,76.9 6.7,75 13.3,59.8 0,50 13.3,40.2 6.7,25 23.1,23.1 25,6.7 40.2,13.3 50,0 59.8,13.3 75,6.7 76.9,23.1 93.3,25 86.7,40.2"/></svg>
-        <b data-k="desafios.ano" data-ph="Ano"></b>
       </div>
     </div>
     <div class="tl" id="timeline"></div>
@@ -510,18 +515,11 @@ body.editing .edit-hint{display:block;font-size:13px;color:var(--muted);margin:0
     </div>
     <div class="chips areas" id="areas"></div>
     <div class="tiers" id="tiers"></div>
-    <div class="sim">
-      <div>
-        <label for="simN">Quantos campeonatos sua empresa quer apoiar em <span data-mirror="desafios.ano"></span>?</label>
-        <div class="sim-row">
-          <input type="range" id="simN" min="1" max="10" value="3" aria-describedby="simTot">
-          <span class="n" id="simNOut">3</span>
-        </div>
-      </div>
-      <div class="sim-out">
-        <div class="tot" id="simTot" aria-live="polite">R$ —</div>
-        <p class="note">1 campeonato custa em média R$ <span data-k="cotas.custoMedio" data-ph="valor"></span></p>
-      </div>
+    <div class="extra">
+      <h3 data-k="cotas.produtosTitulo" data-ph="Título"></h3>
+      <ul id="produtos"></ul>
+      <div class="li-tools"><button class="mini" data-add="cotas.produtos">+ Item</button></div>
+      <div class="extra-foot"><small data-k="cotas.nota" data-ph="Observação"></small><strong data-k="cotas.lema" data-ph="Frase"></strong></div>
     </div>
   </div>
 </section>
@@ -619,13 +617,12 @@ const DEFAULT = {
     ]
   },
   desafios:{
-    ano:"2027",
+    ano:"2026",
     eventos:[
-      {data:"[dd/mm]", nome:"Campeonato X", local:"Cidade-UF"},
-      {data:"[dd/mm]", nome:"[Campeonato 2]", local:"[Cidade-UF]"},
-      {data:"[dd/mm]", nome:"Campeonato Y", local:"Cidade-UF"},
-      {data:"[dd/mm]", nome:"[Campeonato 4]", local:"[Cidade-UF]"},
-      {data:"[dd/mm]", nome:"Campeonato Z", local:"Cidade-UF"}
+      {data:"15/11", nome:"CJJ", local:"Araçatuba-SP"},
+      {data:"22/11", nome:"CJJ", local:"Novo Horizonte-SP"},
+      {data:"06/12", nome:"CJJ", local:"Avaré-SP"},
+      {data:"13/12", nome:"Copa Star", local:"S. J. do Rio Preto-SP"}
     ]
   },
   porque:{
@@ -637,13 +634,17 @@ const DEFAULT = {
     ]
   },
   cotas:{
-    custoMedio:"xxxx",
     areas:["Inscrições e viagens","Kimono e materiais","Transporte e hospedagem","Parceria na temporada"],
     lista:[
-      {selo:"master", nome:"Ouro", valor:"", areas:[0,1,2,3], itens:["Logo em destaque nas costas do kimono","Marca em todos os posts da temporada","Agradecimento em cada pódio"]},
-      {selo:"cota", nome:"Prata", valor:"", areas:[0,2], itens:["Logo na manga do kimono","Marca nos posts dos campeonatos"]},
-      {selo:"cota", nome:"Apoio", valor:"", areas:[1], itens:["Marca nos stories de agradecimento"]}
-    ]
+      {selo:"master", nome:"Ouro", valor:"500", itens:["Maior destaque da marca nas divulgações"]},
+      {selo:"cota", nome:"Prata", valor:"300", itens:["Logo nos materiais e agradecimento nas redes"]},
+      {selo:"cota", nome:"Bronze", valor:"150", itens:["Divulgação como empresa patrocinadora"]},
+      {selo:"cota", nome:"Apoiador", valor:"50", itens:["Agradecimento como apoiador da atleta"]}
+    ],
+    produtosTitulo:"Também aceitamos apoio com produtos e serviços",
+    produtos:["Suplementação e nutrição esportiva*","Roupas esportivas e de treino","Tênis e calçados","Kimonos, faixas, mochilas e acessórios","Inscrições, transporte, hospedagem e alimentação"],
+    nota:"*Produtos de nutrição somente com avaliação dos responsáveis e orientação de profissional habilitado.",
+    lema:"Toda parceria faz a diferença!"
   },
   kimono:{nota:"Respeitando as regras dos campeonatos e a condição de atleta menor de idade."},
   contato:{nome:"Nome Responsável", telefone:"(11) 9 1111 - 1111", instagram:"@instagram.thamis", email:"thamis@thamis.com.br"}
@@ -724,7 +725,7 @@ function renderLists(){
   $("#areas").innerHTML = C.cotas.areas.map((a,i) => `<span class="chip ${i%2===0?"fill":""}" data-area="${i}">${k(`cotas.areas.${i}`,"área")}</span>`).join("");
 
   $("#tiers").innerHTML = C.cotas.lista.map((t,i) => {
-    const cls = ["tier-ouro","tier-prata","tier-apoio"][i%3];
+    const cls = ["tier-ouro","tier-prata","tier-bronze","tier-apoiador"][i%4];
     return `<article class="tier ${cls}" tabindex="0" data-tier="${i}" aria-label="Cota ${esc(t.nome)}">
       ${k(`cotas.lista.${i}.selo`,"selo","span","selo")}
       <h3>${k(`cotas.lista.${i}.nome`,"Nome")}</h3>
@@ -735,8 +736,10 @@ function renderLists(){
     </article>`;
   }).join("");
 
+  $("#produtos").innerHTML = C.cotas.produtos.map((p,i) => `<li><span>${k(`cotas.produtos.${i}`,"Item")}<span class="li-tools"><button class="mini r" data-del="cotas.produtos.${i}">×</button></span></span></li>`).join("");
+
   const sel = $("#fCota"); const prev = sel.value;
-  sel.innerHTML = C.cotas.lista.map((t,i) => `<option value="${i}">Cota ${esc(t.nome)}</option>`).join("") + `<option value="x">Ainda não sei</option>`;
+  sel.innerHTML = C.cotas.lista.map((t,i) => `<option value="${i}">Cota ${esc(t.nome)}${parseMoney(t.valor) ? ` (R$ ${esc(t.valor)})` : ""}</option>`).join("") + `<option value="p">Produtos ou serviços</option><option value="x">Ainda não sei</option>`;
   if (prev) sel.value = prev;
 }
 function fillText(){
@@ -753,7 +756,7 @@ function fillText(){
   const ig = String(C.contato.instagram||"").replace(/^@/,"").trim();
   $("#igLink").href = ig ? `https://instagram.com/${encodeURIComponent(ig)}` : "#";
 }
-function render(){ renderLists(); fillText(); updateSim(); updateMsg(); highlightAreas(selectedTier); updatePend(); }
+function render(){ renderLists(); fillText(); updateMsg(); highlightAreas(selectedTier); updatePend(); }
 
 /* ---------- linha do tempo: eixo entre as fileiras ---------- */
 function positionAxis(){
@@ -771,16 +774,8 @@ addEventListener("resize", positionAxis);
 /* ---------- cotas ---------- */
 let selectedTier = null;
 function highlightAreas(i){
-  const on = i == null ? null : (C.cotas.lista[i]?.areas || []);
-  $$("#areas .chip").forEach(ch => {
-    const a = +ch.dataset.area;
-    ch.classList.toggle("on", !!on && on.includes(a));
-    ch.classList.toggle("dim", !!on && !on.includes(a));
-  });
   $$(".tier").forEach(t => t.classList.toggle("sel", +t.dataset.tier === i));
 }
-document.addEventListener("mouseover", e => { const t = e.target.closest?.(".tier"); if (t && !editing) highlightAreas(+t.dataset.tier); });
-document.addEventListener("mouseout", e => { const t = e.target.closest?.(".tier"); if (t && !t.contains(e.relatedTarget)) highlightAreas(selectedTier); });
 document.addEventListener("click", e => {
   const pick = e.target.closest("[data-pick]");
   if (pick) { e.stopPropagation(); selectedTier = +pick.dataset.pick; $("#fCota").value = String(selectedTier); highlightAreas(selectedTier); updateMsg(); $("#contato").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); setTimeout(()=>$("#fEmpresa").focus({preventScroll:true}), 700); return; }
@@ -788,14 +783,6 @@ document.addEventListener("click", e => {
   if (tier && !editing && !e.target.closest("button")) { selectedTier = +tier.dataset.tier; $("#fCota").value = String(selectedTier); highlightAreas(selectedTier); updateMsg(); }
 });
 document.addEventListener("keydown", e => { const t = e.target.closest?.(".tier"); if (t && (e.key === "Enter" || e.key === " ") && !editing && e.target === t) { e.preventDefault(); t.click(); } });
-
-/* simulador */
-function updateSim(){
-  const n = +$("#simN").value; $("#simNOut").textContent = n;
-  const c = parseMoney(C.cotas.custoMedio);
-  $("#simTot").innerHTML = c ? money(c*n) : `R$ —<small style="display:block;font-family:var(--f-body);font-size:14px;color:var(--muted);margin-top:6px">custo médio ainda não definido</small>`;
-}
-$("#simN").addEventListener("input", () => { updateSim(); $("#fCamp").value = $("#simN").value; updateMsg(); });
 
 /* ---------- kimono ---------- */
 const SPOTS = [
@@ -836,7 +823,7 @@ $("#logoSize").addEventListener("input", renderKimono);
 /* ---------- contato / whatsapp ---------- */
 function buildMsg(){
   const emp = $("#fEmpresa").value.trim(), nome = $("#fNome").value.trim(), msg = $("#fMsg").value.trim();
-  const cv = $("#fCota").value; const cota = cv === "x" ? "ainda não sei qual cota" : `a cota ${C.cotas.lista[+cv]?.nome || ""}`;
+  const cv = $("#fCota").value; const t0 = C.cotas.lista[+cv]; const cota = cv === "x" ? "ainda não sei qual cota" : cv === "p" ? "produtos ou serviços" : `a cota ${t0?.nome || ""}${parseMoney(t0?.valor) ? ` (R$ ${t0.valor})` : ""}`;
   const n = Math.max(1, +$("#fCamp").value || 1);
   let t = `Olá! ${nome ? `Sou ${nome}` : "Tudo bem?"}${emp ? `, da ${emp}` : ""}.\nVi o mídia kit da Heloisa Muniz e quero apoiar com ${cota}, em ${n} campeonato${n>1?"s":""} de ${C.desafios.ano}.`;
   if (msg) t += `\n${msg}`;
@@ -848,7 +835,7 @@ function updateMsg(){
   $("#waBtn").href = d ? `https://wa.me/${d}?text=${encodeURIComponent(t)}` : "#";
 }
 ["fEmpresa","fNome","fMsg","fCamp","fCota"].forEach(id => $("#"+id).addEventListener("input", updateMsg));
-$("#fCota").addEventListener("change", () => { const v = $("#fCota").value; selectedTier = v === "x" ? null : +v; highlightAreas(selectedTier); updateMsg(); });
+$("#fCota").addEventListener("change", () => { const v = $("#fCota").value; selectedTier = (v === "x" || v === "p") ? null : +v; highlightAreas(selectedTier); updateMsg(); });
 $("#leadForm").addEventListener("submit", e => e.preventDefault());
 async function copyText(txt, ok){
   try { await navigator.clipboard.writeText(txt); toast(ok); }
@@ -877,7 +864,7 @@ document.addEventListener("input", e => {
   el.classList.toggle("pend", isPend(el.textContent));
   $$("[data-mirror]").forEach(m => m.textContent = get(C, m.dataset.mirror) ?? "");
   if (el.dataset.k.startsWith("desafios.")) { const cd = el.closest(".ev-card")?.querySelector(".cd"); if (cd) { const i = +el.dataset.k.split(".")[2]; if (!isNaN(i)) cd.textContent = evDays(C.desafios.eventos[i].data); } }
-  updateSim(); updateMsg(); updatePend();
+  updateMsg(); updatePend();
 });
 document.addEventListener("keydown", e => { const el = e.target.closest?.("[data-k]"); if (el && editing && e.key === "Enter" && !el.hasAttribute("data-fmt")) { e.preventDefault(); el.blur(); } });
 document.addEventListener("paste", e => { const el = e.target.closest?.("[data-k]"); if (!el || !editing) return; e.preventDefault(); const t = (e.clipboardData?.getData("text/plain") || "").replace(/\s*\n\s*/g," "); document.execCommand("insertText", false, t); });
@@ -888,6 +875,7 @@ document.addEventListener("click", e => {
     const p = add.dataset.add, arr = get(C, p);
     if (p === "desafios.eventos") arr.push({data:"[dd/mm]", nome:"[Campeonato]", local:"[Cidade-UF]"});
     else if (p === "tatame.conquistas") arr.push({lugar:"[Colocação]", evento:"[Campeonato]"});
+    else if (p === "cotas.produtos") arr.push("[Novo item]");
     else arr.push("[Nova contrapartida]");
     render();
   }

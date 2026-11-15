@@ -48,32 +48,27 @@
     ]
   },
   "desafios": {
-    "ano": "2027",
+    "ano": "2026",
     "eventos": [
       {
-        "data": "[dd/mm]",
-        "nome": "Campeonato X",
-        "local": "Cidade-UF"
+        "data": "15/11",
+        "nome": "CJJ",
+        "local": "Araçatuba-SP"
       },
       {
-        "data": "[dd/mm]",
-        "nome": "[Campeonato 2]",
-        "local": "[Cidade-UF]"
+        "data": "22/11",
+        "nome": "CJJ",
+        "local": "Novo Horizonte-SP"
       },
       {
-        "data": "[dd/mm]",
-        "nome": "Campeonato Y",
-        "local": "Cidade-UF"
+        "data": "06/12",
+        "nome": "CJJ",
+        "local": "Avaré-SP"
       },
       {
-        "data": "[dd/mm]",
-        "nome": "[Campeonato 4]",
-        "local": "[Cidade-UF]"
-      },
-      {
-        "data": "[dd/mm]",
-        "nome": "Campeonato Z",
-        "local": "Cidade-UF"
+        "data": "13/12",
+        "nome": "Copa Star",
+        "local": "S. J. do Rio Preto-SP"
       }
     ]
   },
@@ -95,7 +90,6 @@
     ]
   },
   "cotas": {
-    "custoMedio": "xxxx",
     "areas": [
       "Inscrições e viagens",
       "Kimono e materiais",
@@ -106,44 +100,46 @@
       {
         "selo": "master",
         "nome": "Ouro",
-        "valor": "",
-        "areas": [
-          0,
-          1,
-          2,
-          3
-        ],
+        "valor": "500",
         "itens": [
-          "Logo em destaque nas costas do kimono",
-          "Marca em todos os posts da temporada",
-          "Agradecimento em cada pódio"
+          "Maior destaque da marca nas divulgações"
         ]
       },
       {
         "selo": "cota",
         "nome": "Prata",
-        "valor": "",
-        "areas": [
-          0,
-          2
-        ],
+        "valor": "300",
         "itens": [
-          "Logo na manga do kimono",
-          "Marca nos posts dos campeonatos"
+          "Logo nos materiais e agradecimento nas redes"
         ]
       },
       {
         "selo": "cota",
-        "nome": "Apoio",
-        "valor": "",
-        "areas": [
-          1
-        ],
+        "nome": "Bronze",
+        "valor": "150",
         "itens": [
-          "Marca nos stories de agradecimento"
+          "Divulgação como empresa patrocinadora"
+        ]
+      },
+      {
+        "selo": "cota",
+        "nome": "Apoiador",
+        "valor": "50",
+        "itens": [
+          "Agradecimento como apoiador da atleta"
         ]
       }
-    ]
+    ],
+    "produtosTitulo": "Também aceitamos apoio com produtos e serviços",
+    "produtos": [
+      "Suplementação e nutrição esportiva*",
+      "Roupas esportivas e de treino",
+      "Tênis e calçados",
+      "Kimonos, faixas, mochilas e acessórios",
+      "Inscrições, transporte, hospedagem e alimentação"
+    ],
+    "nota": "*Produtos de nutrição somente com avaliação dos responsáveis e orientação de profissional habilitado.",
+    "lema": "Toda parceria faz a diferença!"
   },
   "kimono": {
     "nota": "Respeitando as regras dos campeonatos e a condição de atleta menor de idade."
